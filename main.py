@@ -28,7 +28,7 @@ def compare_faces(face1, face2):
 
         gray2 = cv.resize(gray2, (w1, h1))
 
-    # Use template matching
+    # template matching
     try:
         result = cv.matchTemplate(gray1, gray2, cv.TM_CCOEFF_NORMED)
         similarity = result[0][0]
@@ -58,7 +58,7 @@ def load_known_faces(reference_images):
             print(f"Warning: No face found in {image_path}")
             continue
 
-        # Extract first face from reference
+        # Extract face from reference
         (x, y, w, h) = reference_faces[0]
 
         padding_x = int(w * 0.1)
@@ -138,9 +138,9 @@ def recognize_multiple_faces(known_faces):
 
 if __name__ == "__main__":
     reference_images = {
-        "mohamed.jpg": "Mohamed",
-        "midou.jpg": "Midou",
-        "iyed.jpg": "Iyed"
+        "test1.jpg": "test1",
+        "test2.jpg": "test2",
+        "test3.jpg": "test3"
     }
 
 
